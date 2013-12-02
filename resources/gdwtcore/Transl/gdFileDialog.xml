@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+<!-- <message id="gdfiledlg-btnOk">Ok</message> -->
+ <message id="gdfiledlg-btnCancel">Cancel</message>
+
+ <message id="gdfiledlg-Open">Open</message>
+ <message id="gdfiledlg-Save">Save</message>
+ <message id="gdfiledlg-SaveAs">Save As</message>
+ <message id="gdfiledlg-Import">Import</message>
+ <message id="gdfiledlg-Link">Link</message>
+
+ <message id="gdfiledlg-btnNewFolder">New</message>
+ <message id="gdfiledlg-btnRemoveFolder">Remove</message>
+</messages>
+

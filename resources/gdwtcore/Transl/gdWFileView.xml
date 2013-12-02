@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+ <message id="gdWFileView-root">Root</message>
+ <message id="gdWFileView-btnFileFolderName">Name : </message>
+
+ <message id="gdWFileView-Name">Name</message>
+ <message id="gdWFileView-Size">Size</message>
+ <message id="gdWFileView-Date">Date</message>
+
+ <message id="gdWFileView-newfolder"></message>
+ <message id="gdWFileView-newfolder-tooltips">Create a new folder</message>
+ <message id="gdWFileView-delete"></message>
+ <message id="gdWFileView-delete-tooltips">Delete the selected item</message>
+ <message id="gdWFileView-rename"></message>
+ <message id="gdWFileView-rename-tooltips">Rename the selected item</message>
+</messages>
+

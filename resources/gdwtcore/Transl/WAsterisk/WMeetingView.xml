@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+ <message id="gdMeetingView-id">ID</message>
+ <message id="gdMeetingView-count">Parties</message>
+ <message id="gdMeetingView-marked">Marked</message>
+ <message id="gdMeetingView-activity">Activity</message>
+ <message id="gdMeetingView-creation">Creation</message>
+ <message id="gdMeetingView-locked">Locked</message>
+
+</messages>
+

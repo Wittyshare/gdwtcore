@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+ <message id="gdwfiledlg-Open">Open</message>
+ <message id="gdwfiledlg-Append">Merge</message>
+ <message id="gdwfiledlg-Save">Save</message>
+ <message id="gdwfiledlg-SaveAs">Save As</message>
+ <message id="gdwfiledlg-SaveChecked">Save Checked</message>
+ <message id="gdwfiledlg-SaveAsChecked">Save Checked As</message>
+ <message id="gdwfiledlg-Import">Import</message>
+ <message id="gdwfiledlg-Link">Link</message>
+ <message id="gdwfiledlg-WebLink">WebLink</message>
+ <message id="gdwfiledlg-WebDownload">WebDownload</message>
+
+ <message id="gdfiledlg-btnNewFolder">New</message>
+ <message id="gdfiledlg-btnRemoveFolder">Remove</message>
+
+ <message id="gdfiledlg_filename">Name: </message>
+
+ <message id="gdfiledlg_novalidsel">No file selected ! select one or click cancel.</message>
+</messages>
+

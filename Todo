@@ -1,0 +1,7 @@
+install
+mkdir build
+cd build
+cmake -Wno-dev -D CONNECTOR_FCGI=ON -D CONNECTOR_HTTP=ON -DBoost_NO_SYSTEM_PATHS=TRUE -DBUILD_LIB_STATIC=false -DBUILD_LIB_SHARED=true  -DAPPNAME=gdwtcore -DCMAKE_BUILD_TYPE=Release -DBOOST_ROOT=/usr/  -DGM_LIBRARY=/usr/local/GraphicsMagick -DGM_INCLUDE_DIR=/usr/local/GraphicsMagick/include/GraphicsMagick ..
+
+make
+sudo make install

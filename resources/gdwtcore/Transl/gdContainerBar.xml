@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+ <message id="gdcontbar_all">All</message>
+ <message id="gdcontbar_tbi_rowcount">Current number of rows in the view</message>
+ <message id="gdcontbar_tbi_rowtitle">Rows</message>
+ <message id="gdcontbar_tbi_reload">Reload the tree</message>
+ <message id="gdcontbar_tbi_pdf">Export the sheet to a pdf file</message>
+ <message id="gdcontbar_tbi_delete">Delete selected rows</message>
+</messages>
+

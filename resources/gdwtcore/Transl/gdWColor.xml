@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<messages>
+ <message id="gdwcolor_title">Color : </message>
+ <message id="gdwcolor_red">Red</message>
+ <message id="gdwcolor_green">Green</message>
+ <message id="gdwcolor_blue">Blue</message>
+ <message id="gdwcolor_alpha">Alpha</message>
+ <message id="gdwcolor_dialog">Pick.</message>
+</messages>
+
