@@ -37,7 +37,7 @@ ENDIF( GDWTCORE_INCLUDE_DIR )
 IF(GDWTCORE_FOUND)
    INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_gdcore.cmake)
    INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_gdwt.cmake)
-   INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_vmime.cmake)
+   #INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_vmime.cmake)
    INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_GraphicsMagick.cmake)
 
    IF(NOT GDCORE_FOUND)
@@ -48,21 +48,21 @@ IF(GDWTCORE_FOUND)
      MESSAGE(FATAL_ERROR "** these program needs Wt libraries... Abord.")
    ENDIF(NOT GDWT_FOUND)
    
-   IF(NOT VMIME_FOUND)
-     MESSAGE(FATAL_ERROR "** these program needs vmime libraries... Abord.")
-   ENDIF(NOT VMIME_FOUND)
+   #IF(NOT VMIME_FOUND)
+   #  MESSAGE(FATAL_ERROR "** these program needs vmime libraries... Abord.")
+   #ENDIF(NOT VMIME_FOUND)
    
    SET(GDWTCORE_INCLUDE_DIRS
         ${GDCORE_INCLUDE_DIRS}
         ${GDWT_INCLUDE_DIR}
-        ${VMIME_INCLUDE_DIRS}
+        #${VMIME_INCLUDE_DIRS}
         ${GDWTCORE_INCLUDE_DIR}
    )
 
    SET(GDWTCORE_LIBRARIES
         ${GDCORE_LIBRARIES}
         ${GDWT_LIBRARY}
-        ${VMIME_LIBRARIES}
+        #${VMIME_LIBRARIES}
         ${GDWTCORE_LIBRARY}
    )
 #message(STATUS "Found gdwtcore all : ${GDWTCORE_LIBRARIES}")
