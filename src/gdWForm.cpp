@@ -7,8 +7,8 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/replace.hpp>
 
-#include <vmime/vmime.hpp>
-#include <vmime/platforms/posix/posixHandler.hpp>
+//#include <vmime/vmime.hpp>
+//#include <vmime/platforms/posix/posixHandler.hpp>
 
 #include <Wt/WApplication>
 #include <Wt/WLogger>
@@ -18,6 +18,8 @@
 #include <Wt/WMessageBox>
 #include <Wt/WTimer>
 #include <Wt/WTheme>
+#include <Wt/Mail/Client>
+#include <Wt/Mail/Message>
 
 #include <gdcore/gdCore.h>
 #include <gdcore/gdLdap.h>
@@ -640,9 +642,26 @@ std::string gdWForm::email()
  }
 
 void gdWForm::sendEmail(const std::string& rBody, std::string rEmailTo)
- {
+{
   //wApp->log("notice") << "gdWForm::sendEmail : " << rBody << " To " << rEmailTo;
   wApp->log("notice") << "gdWForm::sendEmail :  To " << rEmailTo;
+
+  Mail::Message message;
+  message.setFrom(Mail::Mailbox(m_sFrom));
+
+  if ( rEmailTo.size() > 0 )
+    message.addRecipient(Mail::To, Mail::Mailbox(rEmailTo));
+  for(int cpt = 0; cpt < m_vTo.size(); cpt++) {
+    message.addRecipient(Mail::To, Mail::Mailbox(m_vTo[cpt]));
+  }
+  message.setSubject(m_sSubject);
+  message.setBody("No html renderer in your mail client ");
+  message.addHtmlBody (rBody);
+  Mail::Client client;
+  client.connect(m_sSmtpServer);
+  client.send(message);
+
+  /*
   vmime::platformDependant::setHandler<vmime::platforms::posix::posixHandler>();
 
   try
@@ -711,6 +730,7 @@ void gdWForm::sendEmail(const std::string& rBody, std::string rEmailTo)
    std::cout << "std::exception: " << e.what() << std::endl;
    //throw;
    }
+   */
  }
 
 bool gdWForm::checkRequired()
