@@ -54,7 +54,6 @@ SET ( APPNAME_SRCS
 
 INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/Find_gdcore.cmake)
 INCLUDE(${CMAKE_HOME_DIRECTORY}/cmake/Find_gdwt.cmake)
-INCLUDE(${CMAKE_HOME_DIRECTORY}/cmake/Find_vmime.cmake)
 
 INCLUDE_DIRECTORIES(
                     ./
@@ -65,6 +64,6 @@ INCLUDE_DIRECTORIES(
 INCLUDE(${CMAKE_ROOT}/Modules/gdcmake/install_libs.cmake)
 
 TARGET_LINK_LIBRARIES(
-    gdwtcore ${GDCORE_LIBRARY} ${GDWT_LIBRARY} ${VMIME_LIBRARIES}
+    gdwtcore ${GDCORE_LIBRARY} ${GDWT_LIBRARY}
 )
 
