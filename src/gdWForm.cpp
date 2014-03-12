@@ -40,7 +40,7 @@ gdWFormItem::gdWFormItem(std::string& outputAttribute, WObject* pObject, bool bR
 
 
 gdWForm::gdWForm(const std::string& rXmlFile, WContainerWidget* parent)
- : WContainerWidget(parent), m_sXmlFile(rXmlFile), m_bRedirectTextAddEmailBody(false), m_bCheckLdap(false), m_bDebugLdap(false), m_bCsvEmailForm(false)
+ : WContainerWidget(parent), m_sXmlFile(rXmlFile), m_bRedirectTextAddEmailBody(false), m_bCheckLdap(false), m_bDebugLdap(false), m_bCsvEmailForm(false), m_bAutoLoad(true)
  {
   if ( WString::tr("byObjectStyleSheet").narrow() == "true" )
      wApp->useStyleSheet(wApp->theme()->resourcesUrl() + "gdwtcore/Css/gdWForm.css");
@@ -52,11 +52,14 @@ gdWForm::~gdWForm()
 
 void gdWForm::load()
  {
-  m_vObjects.clear();
-  loadXmlFile(m_sXmlFile);
-  WContainerWidget::load();
-  resize(WLength(100, WLength::Percentage), WLength(100, WLength::Percentage));
-  setOverflow(WContainerWidget::OverflowAuto);
+  if (m_bAutoLoad)
+  {
+    m_vObjects.clear();
+    loadXmlFile(m_sXmlFile);
+    WContainerWidget::load();
+    resize(WLength(100, WLength::Percentage), WLength(100, WLength::Percentage));
+    setOverflow(WContainerWidget::OverflowAuto);
+  }
  }
 
 bool gdWForm::loadXmlFile(const std::string& rXmlFile)

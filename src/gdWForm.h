@@ -46,6 +46,9 @@ class gdWForm : public Wt::WContainerWidget
                             gdWForm(const std::string& rXmlFile, Wt::WContainerWidget* parent = 0);
                             ~gdWForm();
    void                     load();
+   bool                     checkRequired();
+   bool			    m_bAutoLoad;
+   std::vector<gdWFormItem*>   m_vObjects;
 
   private :
    int                      resizeImage(std::string in, std::string out, std::string size);
@@ -73,7 +76,6 @@ class gdWForm : public Wt::WContainerWidget
 
    std::string              email();
    void                     sendEmail(const std::string& rBody, std::string rEmailTo);
-   bool                     checkRequired();
    std::string              buildEmailBody();
    std::string              objectValues(Wt::WObject* pObject);
    std::string              getLdapDn(std::string& email);
@@ -87,7 +89,6 @@ class gdWForm : public Wt::WContainerWidget
 
   private :
    std::string                 m_sXmlFile;
-   std::vector<gdWFormItem*>   m_vObjects;
    std::string                 m_action;
    std::string                 m_sRedirectPage;
 
