@@ -18,33 +18,31 @@
 
 /*! \class gdWColorDialogData
 */
-class gdWColorDialogData : public gdWDialogData
- {
-  public :
-               gdWColorDialogData(Wt::WColor color = Wt::black);
+class gdWColorDialogData : public gdWDialogData {
+public :
+  gdWColorDialogData(Wt::WColor color = Wt::black);
 
-  public :
-   Wt::WColor      m_color;
- };
+public :
+  Wt::WColor      m_color;
+};
 
 /*! \class gdWColorDialog
  *  \brief Dialog to allow users to select a rgd color
 */
- 
-class gdWColorDialog : public gdWDialog
- {
-  public :
-                gdWColorDialog(Wt::WString title, gdWColorDialogData* refData = 0);
-                ~gdWColorDialog();
-   void         addColor(Wt::WTableCell* cell, const Wt::WColor& color);
-   void         setColor(const Wt::WColor& color);
-   void         saveData(gdWDialogData* pData = 0);
 
-  private :
-   gdWColorDialogData*             m_refData;
-   Wt::WTable*                     m_pColorTable;
-   Wt::WText*                      m_pText;
- };
+class gdWColorDialog : public gdWDialog {
+public :
+  gdWColorDialog(Wt::WString title, gdWColorDialogData* refData = 0);
+  ~gdWColorDialog();
+  void         addColor(Wt::WTableCell* cell, const Wt::WColor& color);
+  void         setColor(const Wt::WColor& color);
+  void         saveData(gdWDialogData* pData = 0);
+
+private :
+  gdWColorDialogData*             m_refData;
+  Wt::WTable*                     m_pColorTable;
+  Wt::WText*                      m_pText;
+};
 
 #endif // ifdef __gdWColorDialog__
 

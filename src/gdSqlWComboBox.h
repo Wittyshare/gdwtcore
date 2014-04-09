@@ -11,19 +11,20 @@
 
 #include "gdSqlModel.h"
 
-class gdSqlWComboBox : public Wt::WComboBox
- {
-  public :
-               gdSqlWComboBox(int modelColumn, Wt::WContainerWidget* parent = 0);
-   int         getSelectionID();
-   void        setSelectionID(int selID);
-   gdSqlModel* model() const { return m_model; };
-  
-  private slots :
+class gdSqlWComboBox : public Wt::WComboBox {
+public :
+  gdSqlWComboBox(int modelColumn, Wt::WContainerWidget* parent = 0);
+  int         getSelectionID();
+  void        setSelectionID(int selID);
+  gdSqlModel* model() const {
+    return m_model;
+  };
 
-  private :
-   gdSqlModel*                     m_model;
- };
+private slots :
+
+private :
+  gdSqlModel*                     m_model;
+};
 
 #endif // ifdef GD_gdSqlWComboBox_H__
 

@@ -11,26 +11,27 @@
 #include <Wt/WPanel>
 #include <Wt/WSignal>
 
-class WPanelList : public Wt::WContainerWidget
-{
- public :
+class WPanelList : public Wt::WContainerWidget {
+public :
   WPanelList(Wt::WContainerWidget* parent);
 
   Wt::WPanel* addWidget(const Wt::WString& text, Wt::WWidget* w);
   void addPanel(Wt::WPanel* panel);
   void setAutoCollapse(bool bCollapse = true);
-//  void removePanel(Wt::WPanel *panel);
+  //  void removePanel(Wt::WPanel *panel);
 
- private slots :
+private slots :
   void selectionChanged();
 
- public :
-  Wt::Signal<void>& s_changed() { return s_changed_; };
+public :
+  Wt::Signal<void>& s_changed() {
+    return s_changed_;
+  };
 
- private :
+private :
   Wt::Signal<void> s_changed_;
 
- private :
+private :
   void onExpand(bool notUndo);
 
   int wasExpanded_;

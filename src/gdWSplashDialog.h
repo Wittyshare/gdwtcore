@@ -11,18 +11,17 @@
 
 #include "gdWDialog.h"
 
-class gdWSplashDialog : public gdWDialog
- {
-  public :
-        gdWSplashDialog(const Wt::WString &title, gdWDialogData* refData, int nTimer);
-   void buildContent(Wt::WContainerWidget* pwcMain);
+class gdWSplashDialog : public gdWDialog {
+public :
+  gdWSplashDialog(const Wt::WString& title, gdWDialogData* refData, int nTimer);
+  void buildContent(Wt::WContainerWidget* pwcMain);
 
-  public slots :
-   void endSplash();
+public slots :
+  void endSplash();
 
-  private :
-   int               m_nTimer;
- };
+private :
+  int               m_nTimer;
+};
 
 #endif // ifdef __GDWSSPLASDIALOG_H__
 

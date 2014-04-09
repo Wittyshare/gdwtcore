@@ -22,43 +22,44 @@
 /*! \class gdWtThread
  *  \brief A class that attach a thread to Wt app
 */
-class gdWtThread : public Wt::WObject
- {
-  public :
+class gdWtThread : public Wt::WObject {
+public :
   /*! \brief Constructor.  */
-   gdWtThread();
+  gdWtThread();
   /*! \brief Destructor.  */
-   ~gdWtThread();
+  ~gdWtThread();
 
-   /*! \brief specify the function called when the startJobprocessing is called. */
-   void setProcessCallback(boost::function<void ()> pFunc);
+  /*! \brief specify the function called when the startJobprocessing is called. */
+  void setProcessCallback(boost::function<void ()> pFunc);
 
-   /*! \brief Process a job. */
-   void startJobProcessing();
+  /*! \brief Process a job. */
+  void startJobProcessing();
 
-  private :
-   void startThread(Wt::WApplication* app);
-   void stopThread();
+private :
+  void startThread(Wt::WApplication* app);
+  void stopThread();
 
-  private slots :
-   void isJobTerminated();
+private slots :
+  void isJobTerminated();
 
- public :
-  Wt::Signal<void>& jobTerminated() { return jobTerminated_; };
+public :
+  Wt::Signal<void>& jobTerminated() {
+    return jobTerminated_;
+  };
 
- private :
+private :
   Wt::Signal<void> jobTerminated_;
 
-  private :
-   Wt::WTimer                       m_timer;
-   boost::thread                    m_thread;
-   boost::recursive_mutex           m_mutex;
-   boost::condition                 m_condition;
-   volatile bool                    m_stopThread;
-   bool                             m_bBusy;
-   boost::function<void ()>         processCallback;
-   Wt::WApplication*                m_pApp;
- };
+private :
+  Wt::WTimer                       m_timer;
+  boost::thread                    m_thread;
+  boost::recursive_mutex           m_mutex;
+  boost::condition                 m_condition;
+  volatile bool                    m_stopThread;
+  bool                             m_bBusy;
+  boost::function<void ()>         processCallback;
+  Wt::WApplication*                m_pApp;
+};
 
 #endif // __gdWtThread__
 

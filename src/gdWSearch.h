@@ -11,34 +11,33 @@
 #include <Wt/WLineEdit>
 #include <Wt/WImage>
 
-class gdWSearch : public Wt::WContainerWidget
- {
-  public :
-                      gdWSearch(Wt::WContainerWidget* parent = 0);
-                      ~gdWSearch();
-   void               setText(const std::string& text);
-   const std::string& text();
+class gdWSearch : public Wt::WContainerWidget {
+public :
+  gdWSearch(Wt::WContainerWidget* parent = 0);
+  ~gdWSearch();
+  void               setText(const std::string& text);
+  const std::string& text();
 
-  public slots :
-   void           doSearch();
-   void           doFocussed();
-   void           doBlurred();
+public slots :
+  void           doSearch();
+  void           doFocussed();
+  void           doBlurred();
 
-  public :
-   /*! \brief Signal emitted when a search are validated */
-   Wt::Signal<Wt::WString>& searchValidated();
-   Wt::Signal<Wt::WString>& searchFocussed();
-   Wt::Signal<Wt::WString>& searchBlurred();
+public :
+  /*! \brief Signal emitted when a search are validated */
+  Wt::Signal<Wt::WString>& searchValidated();
+  Wt::Signal<Wt::WString>& searchFocussed();
+  Wt::Signal<Wt::WString>& searchBlurred();
 
-  private :
-   Wt::Signal<Wt::WString> searchValidated_;
-   Wt::Signal<Wt::WString> searchFocussed_;
-   Wt::Signal<Wt::WString> searchBlurred_;
+private :
+  Wt::Signal<Wt::WString> searchValidated_;
+  Wt::Signal<Wt::WString> searchFocussed_;
+  Wt::Signal<Wt::WString> searchBlurred_;
 
-  private :
-   Wt::WLineEdit*     m_leSearch;
-   Wt::WImage*        m_pImage;
- };
+private :
+  Wt::WLineEdit*     m_leSearch;
+  Wt::WImage*        m_pImage;
+};
 
 #endif // ifdef __gdWSearch__
 

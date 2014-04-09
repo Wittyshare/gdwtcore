@@ -14,14 +14,13 @@
 /*! \class dlgHourGlass
  *  \brief A dialog widget that show a hour glass
 */
-class dlgHourGlass : public Wt::WDialog
- {
-  public :
+class dlgHourGlass : public Wt::WDialog {
+public :
   /*! \brief Constructor.
 
   */
-   dlgHourGlass(const Wt::WString& pLabel = Wt::WString());
+  dlgHourGlass(const Wt::WString& pLabel = Wt::WString());
 
- };
+};
 
 #endif // ifdef DLG_HOURGLASS_H__

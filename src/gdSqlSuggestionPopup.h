@@ -15,42 +15,43 @@
 
 #include "gdSqlModel.h"
 
-class gdSqlSuggestionPopup : public Wt::WContainerWidget
- {
-  public :
-   gdSqlSuggestionPopup(gdCoreSql* refSql, std::string strQuery, int column, Wt::WContainerWidget* parent = 0);
-  
-  public :
-   void        loadModel();
-   void        setQuery(const std::string& query);
-   int         getSelectionID();
-   void        setSelectionID(int selID);
-   void        setCurrentIndex(int index);
-   int         currentIndex();
-   gdSqlModel* model();
-   std::string value();
+class gdSqlSuggestionPopup : public Wt::WContainerWidget {
+public :
+  gdSqlSuggestionPopup(gdCoreSql* refSql, std::string strQuery, int column, Wt::WContainerWidget* parent = 0);
 
-  private :
-   void filter(const Wt::WString& strFilter);
+public :
+  void        loadModel();
+  void        setQuery(const std::string& query);
+  int         getSelectionID();
+  void        setSelectionID(int selID);
+  void        setCurrentIndex(int index);
+  int         currentIndex();
+  gdSqlModel* model();
+  std::string value();
 
-  private slots :
-   void doChanged(int id, Wt::WFormWidget* search);
+private :
+  void filter(const Wt::WString& strFilter);
 
-  public :
-   Wt::Signal<int>& s_changed() { return s_changed_; };
+private slots :
+  void doChanged(int id, Wt::WFormWidget* search);
 
-  private :
-   Wt::Signal<int> s_changed_;
+public :
+  Wt::Signal<int>& s_changed() {
+    return s_changed_;
+  };
 
-  private :
-   int                           m_nIndex;
-   int                           m_nColumn;
-   std::string                   m_strQuery;
-   gdSqlModel*                   m_pSqlModel;
-   Wt::WSortFilterProxyModel*    m_pFilterModel;
-   Wt::WLineEdit*                m_leSearch;
-   Wt::WSuggestionPopup*         m_pSuggestionPopup;
- };
+private :
+  Wt::Signal<int> s_changed_;
+
+private :
+  int                           m_nIndex;
+  int                           m_nColumn;
+  std::string                   m_strQuery;
+  gdSqlModel*                   m_pSqlModel;
+  Wt::WSortFilterProxyModel*    m_pFilterModel;
+  Wt::WLineEdit*                m_leSearch;
+  Wt::WSuggestionPopup*         m_pSuggestionPopup;
+};
 
 #endif // ifdef _gdSqlSuggestionPopup_H__
 
