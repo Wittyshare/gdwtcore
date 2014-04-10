@@ -60,9 +60,10 @@ void gdWLogon::load()
   WContainerWidget:: load();
 }
 
-void gdWLogon::setError(std::string& sError)
+void gdWLogon::setError(const std::string& sError)
 {
   m_wtError->setText(sError);
+
 }
 
 void gdWLogon::doLogon()

@@ -18,7 +18,7 @@ public :
   void           setTextLogon(std::string& logonText);
   void           setTextPassword(std::string& passwdordText);
   void           load();
-  void           setError(std::string& sError);
+  void           setError(const std::string& sError);
 
 public slots :
   void           doLogon();
