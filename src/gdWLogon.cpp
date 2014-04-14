@@ -38,9 +38,11 @@ void gdWLogon::load()
 {
   m_leLogon = new WLineEdit();
   m_leLogon->setText(m_sLogonText);
-  m_leLogon->setFocus(true);
   m_leLogon->setTextSize(50);
   m_leLogon->resize(150, WLength::Auto);
+  m_leLogon->setFocus(true);
+  m_leLogon->setAutoComplete(true);
+  m_leLogon->doJavaScript(m_leLogon->jsRef() + ".select()");
   m_leLogon->enterPressed().connect(SLOT(this, gdWLogon::doLogon));
   m_lePassword = new WLineEdit();
   m_lePassword->setEchoMode(Wt::WLineEdit::Password);
